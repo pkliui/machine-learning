@@ -15,10 +15,13 @@ This documents records examples of my independent coursework on machine learning
 [Course 2 - Exercise 2 - Cats vs. Dogs using augmentation]()
 * Training a CNN on the full cats-vs-dogs dataset using data augmentation.
 
+
+
 ## My notes and thoughts
 
-### Initialization
 
+
+### Initialization
 * If the weights are all the same, all neurons will learn the same things. 
 * Hence initializing all weights to 0 or to a constant makes no sense.
 * Too small weights >>> y = a[L] = W[L] small_number^{L-1} x >>> Vanishing gradient problem >>> Slow learning
@@ -38,6 +41,28 @@ For deep NNs:  ```tf.keras.initializers.GlorotUniform()```
 [He 2015](https://arxiv.org/pdf/1502.01852.pdf)
 * For **ReLU activation** a common initialization is He initialization
 * In Xavier initialization, the activations are assumed to be linear (tanh(z) = z, as the weights are small). This does nto work for the ReLU activations.
+
+
+### Underfitting and overfitting
+#### Underfitting 
+* Underfitting means the model was not trained sufficiently long and performs poorly both on train and validation data.
+* An underfit model is characterised by **high bias and low variance**. 
+* Underfitting can be adressed by increasing the capacity of the model  (an ability to fit a variety of different functions)
+* For example,  by increasing the number of hidden layers and (or) the number of nodes in them.
+
+#### Overfitting
+* Overfitting means a model performs very well on train data and poorly on validation data. 
+* An overfit model is characterised by **low bias and high variance**. Its performance **varies** strongly for unseen data. And it performs very well on the seen data.
+* The model is "too complicated" for this dataset and hence learnt features which do not exist in reality.
+
+
+There are two way to address overfitting:
+1. Increase the amount of data used for training.  
+  >>> **Grid search**
+  >>> Removal of excess nodes
+2. Reduce the complexity of the model: 
+  >>> By decreasing the number of adaptive parameters (layers and nodes) in the network (this is called structural stabilization). 
+  >>> Or by controlling the complexity of a model through the use of regularization (via addition of a penalty term to the error function, which encourages the weights to be small).
 
 ## Useful resources
 
