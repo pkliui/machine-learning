@@ -63,6 +63,9 @@ There are two way to address overfitting:
 2. Reduce the complexity of the model: 
   >>> By decreasing the number of adaptive parameters (layers and nodes) in the network (this is called structural stabilization). 
   >>> Or by controlling the complexity of a model through the use of regularization (via addition of a penalty term to the error function, which encourages the weights to be small).
+  
+### Data augmentation
+* [Hernández-García 2018](https://arxiv.org/abs/1806.03852) systematically analyzed the effect of data augmentation on some popular architectures and conclude that data augmentation alone—without any other explicit regularization techniques—can achieve the same performance or higher as regularized models, especially when training with fewer examples.
 
 ## Useful resources
 
@@ -75,3 +78,15 @@ There are two way to address overfitting:
 
 ### Data science
 [**Fundamentals of Data Science Stanford MS&E 226**](https://web.stanford.edu/class/msande226/l_notes.html) 
+
+## Papers I read, sorted by date
+
+### **12/2020 (1)**
+* [Hernández-García 2018](https://arxiv.org/abs/1806.03852)
+
+## Papers I read, sorted by topic
+
+### Data augmentation
+* [Hernández-García 2018](https://arxiv.org/abs/1806.03852)
+### Regularization
+* [Hernández-García 2018](https://arxiv.org/abs/1806.03852)
