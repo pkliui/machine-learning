@@ -67,6 +67,24 @@ There are two way to address overfitting:
 ### Data augmentation
 * [Hernández-García 2018](https://arxiv.org/abs/1806.03852) systematically analyzed the effect of data augmentation on some popular architectures and conclude that data augmentation alone—without any other explicit regularization techniques—can achieve the same performance or higher as regularized models, especially when training with fewer examples.
 
+
+### Optimization algorithms 
+* Depening on the amount of data, there is a trade-off between the accuracy and the computational complexity.
+
+#### Batch gradient descent 
+* Uses the whole dataset to perform one update
+* Computes the gradient of the cost function w.r.t. the parameters theta:
+<img src="https://render.githubusercontent.com/render/math?math=\theta=\theta - \eta \cdot \nabla_\theta J (\theta)"> 
+* Thus very slow
+* Guaranteed to converge to a global min for convex error  surafces, and to a local min for non-convex ones.
+* No online update of the model (with the new examples on-the-fly)
+
+#### Batch gradient descent 
+* Performs a parameter update for each training example x(i) and label y(i):
+<img src="https://render.githubusercontent.com/render/math?math=\theta=\theta - \eta \cdot \nabla_\theta J (\theta; x(i); y(i))"> 
+* Supposed to take longer if we extend out training dataset by replicating the data [Bishop, p. 264](https://www.amazon.com/Networks-Recognition-Advanced-Econometrics-Paperback/dp/0198538642)
+
+
 ## Useful resources
 
 ### Mathematics
