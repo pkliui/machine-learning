@@ -19,28 +19,44 @@ This documents records examples of my independent coursework on machine learning
 
 ## My notes and thoughts
 
+### Batch normalization
+* Normalizing  the input. Is it important? Why? Connection to the initialization?
 
 
 ### Initialization
 * If the weights are all the same, all neurons will learn the same things. 
 * Hence initializing all weights to 0 or to a constant makes no sense.
+* **Effective randomization of weights is crucial to learning good mappings from inout to output**
 * Too small weights >>> y = a[L] = W[L] small_number^{L-1} x >>> Vanishing gradient problem >>> Slow learning
 * Too large weights >>> y = a[L] = W[L] large_number^{L-1} x >>> Exploding gradient problem >>> Divergence, the cost oscillates around its minimum.
 
+Example: normal distribution of weights mean = 0, std = 1.0
+
+ <img src="https://render.githubusercontent.com/render/math?math=input=X_1W_1+X_2W_2+...">
+ 
+where Xs are the input neurons and Ws are the respective weights. The variance of each element in this sum is 
+
+ <img src="https://render.githubusercontent.com/render/math?math=Var(X_iW_i)= E[X_i^2W_i^2] - E[X_iW_i]^2  = [E(X_i)]^2Var(W_i)  %2B  [E(W_i)]^2Var(X_i) %2B Var(X_i)Var(W_i)">
+ 
+Under the assumption the input was scaled with the mean = 0 and a unit variance,  the variance is = 1. Hence, the total variance *Var(input) = n*, where *n* is the number of inputs. For large *n*, the variance of the input will be large too and this will lead to a saturation of the activation function already in the first layer :  *z_1 = tanh (XW) =  tanh(input) >> |2| *
+
+* The variance of the weights must be kept constant throughout the training. This is possible to achieve with, for example, Xavier's and He's initializations.
+
 #### Xavier initialization  
 [Glorot 2010](http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf?hc_location=ufi)
-* Works with **tanx activations**
+* Works with **sigmoid and tanh activations**
 * Zero mean and constant variance of the weights across all layers.
-* Initialize the weights randomly from a *normal distribution* with mean = 0 and variance <img src="https://render.githubusercontent.com/render/math?math=\sigma=1/n^{l-1}">  , where n is the number of neurons in layer l-1. 
+* Initialize the weights randomly from a *normal distribution* with mean = 0 and variance <img src="https://render.githubusercontent.com/render/math?math=\sigma=\sqrt{6/(nin + nout)}">  , where *nin* and *nout* are the average number of the input and output neurons. 
 * Assumes that the activations are linear.
 * This prevents both the vanishing and exploding gradients problems
 
-For deep NNs:  ```tf.keras.initializers.GlorotUniform()```
+```tf.keras.initializers.GlorotUniform()```
 
 #### He initialization
 [He 2015](https://arxiv.org/pdf/1502.01852.pdf)
 * For **ReLU activation** a common initialization is He initialization
-* In Xavier initialization, the activations are assumed to be linear (tanh(z) = z, as the weights are small). This does nto work for the ReLU activations.
+* In Xavier initialization, the activations are assumed to be linear (tanh(z) = z, as the weights are small). This does not work for the ReLU activations.
+* 
 
 
 ### Underfitting and overfitting
