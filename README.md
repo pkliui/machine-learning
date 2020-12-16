@@ -17,13 +17,14 @@ This documents records examples of my independent coursework on machine learning
 
 
 
-## My notes and thoughts
+# My notes and thoughts
 
+## Normalization
 ### Batch normalization
 * Normalizing  the input. Is it important? Why? Connection to the initialization?
 
 
-### Initialization
+## Initialization
 * If the weights are all the same, all neurons will learn the same things. 
 * Hence initializing all weights to 0 or to a constant makes no sense.
 * **Effective randomization of weights is crucial to learning good mappings from inout to output**
@@ -42,31 +43,31 @@ Under the assumption the input was scaled with the mean = 0 and a unit variance,
 
 * The variance of the weights must be kept constant throughout the training. This is possible to achieve with, for example, Xavier's and He's initializations.
 
-#### Xavier initialization  
+### Xavier initialization  
 [Glorot 2010](http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf?hc_location=ufi)
 * Works with **sigmoid and tanh activations**
 * Zero mean and constant variance of the weights across all layers.
-* Initialize the weights randomly from a *normal distribution* with mean = 0 and variance <img src="https://render.githubusercontent.com/render/math?math=\sigma=\sqrt{6/(nin + nout)}">  , where *nin* and *nout* are the average number of the input and output neurons. 
+* Initialize the weights randomly from a **normal distribution*** with mean = 0 and variance <img src="https://render.githubusercontent.com/render/math?math=\sigma=\sqrt{6/(nin + nout)}">  , where *nin* and *nout* are the average number of the input and output neurons. 
 * Assumes that the activations are linear.
 * This prevents both the vanishing and exploding gradients problems
 
 ```tf.keras.initializers.GlorotUniform()```
 
-#### He initialization
+### He initialization
 [He 2015](https://arxiv.org/pdf/1502.01852.pdf)
 * For **ReLU activation** a common initialization is He initialization
 * In Xavier initialization, the activations are assumed to be linear (tanh(z) = z, as the weights are small). This does not work for the ReLU activations.
 * 
 
 
-### Underfitting and overfitting
-#### Underfitting 
+## Underfitting and overfitting
+### Underfitting 
 * Underfitting means the model was not trained sufficiently long and performs poorly both on train and validation data.
 * An underfit model is characterised by **high bias and low variance**. 
 * Underfitting can be adressed by increasing the capacity of the model  (an ability to fit a variety of different functions)
 * For example,  by increasing the number of hidden layers and (or) the number of nodes in them.
 
-#### Overfitting
+### Overfitting
 * Overfitting means a model performs very well on train data and poorly on validation data. 
 * An overfit model is characterised by **low bias and high variance**. Its performance **varies** strongly for unseen data. And it performs very well on the seen data.
 * The model is "too complicated" for this dataset and hence learnt features which do not exist in reality.
@@ -80,14 +81,56 @@ There are two way to address overfitting:
   >>> By decreasing the number of adaptive parameters (layers and nodes) in the network (this is called structural stabilization). 
   >>> Or by controlling the complexity of a model through the use of regularization (via addition of a penalty term to the error function, which encourages the weights to be small).
   
-### Data augmentation
+## Data augmentation
 * [Hernández-García 2018](https://arxiv.org/abs/1806.03852) systematically analyzed the effect of data augmentation on some popular architectures and conclude that data augmentation alone—without any other explicit regularization techniques—can achieve the same performance or higher as regularized models, especially when training with fewer examples.
 
 
-### Optimization algorithms 
+## Optimization algorithms 
+
+* For a given NN architecture, the values of parameters determine the performance of a model.
+* The goal is to find parameters that match predictions with the ground truth as close as possible.
+* This is done by defining a loss function and minimizing it.
+* The way the loss function is defined determined the performance of the model.
+
+* The cost function is  the average of the loss computed for the entire training data set:
+
+<img src="https://render.githubusercontent.com/render/math?math= J = 1/m \sum_{i=1}^mL^{i}"> 
+
+* The cost function has a landscape that varies as a function fo the parameters of the NN.
+* The goal is to find a point where the cost is (approximately) minimal.
+
 * Depening on the amount of data, there is a trade-off between the accuracy and the computational complexity.
 
-#### Batch gradient descent 
+### Gradient descent
+
+* Update parameters *W* as 
+
+<img src="https://render.githubusercontent.com/render/math?math=W = W - \alpha \frac{dJ(y,y^\hat)}{dW}"> 
+
+where *J* is the cost function and *\alpha* is the learning rate
+
+* When *J* is computed for the whole data set, then the algorithm is sometimes called "batch gradient descent". When it is optimized for a batch of data, it is called "mini-batch GS".
+
+* For mini-batches, the algorithm converges faster.
+
+* If the learning rate is too small, the algorithm will converge slowly
+* If the LR is too large, the cost function will oscillate, the algorithm won't converge.
+* Adaptive learning-rate algorithms such as Adam and RMSprop adjust the LR in the course of the optimization.
+
+### Stochastic gradient descent
+
+* The gradient of the function f(x) = sum(f_i) is expensive to compute.
+* Hence we approximate this gradient by a randomized version. 
+* Depending on how good this randomized version is, the alg. may or may not converge to a right minimum.
+* Updates weights by computing the gradient of a stochastically chosen function f_i o
+* Makes a very fast progress in the very beginning.
+* In the very beginning, parameter values are very far away from the optimal. Both the full gradient and the stochastic gradient  have the same sign. Hence computing only the stochastoc gradient allows to make an update in the same direction.
+* "The region of confusion" [x_min, x_max] is a range of x_i values which minimize functions f_i, x_min and x_max are the minimal and maximal of these values.
+* Because we compute only one value f_i, it is not possible to say where the minimum of the function f(x) = sum(f_i) is! The algorithm fluctuates around the minimum!
+
+
+
+### Batch gradient descent 
 * Uses the whole dataset to perform one update
 * Computes the gradient of the cost function w.r.t. the parameters theta:
 <img src="https://render.githubusercontent.com/render/math?math=\theta=\theta - \eta \cdot \nabla_\theta J (\theta)"> 
@@ -95,13 +138,21 @@ There are two way to address overfitting:
 * Guaranteed to converge to a global min for convex error  surafces, and to a local min for non-convex ones.
 * No online update of the model (with the new examples on-the-fly)
 
-#### Batch gradient descent 
+### Batch gradient descent 
 * Performs a parameter update for each training example x(i) and label y(i):
 <img src="https://render.githubusercontent.com/render/math?math=\theta=\theta - \eta \cdot \nabla_\theta J (\theta; x(i); y(i))"> 
 * Supposed to take longer if we extend out training dataset by replicating the data [Bishop, p. 264](https://www.amazon.com/Networks-Recognition-Advanced-Econometrics-Paperback/dp/0198538642)
 
+## Batch size
+* [Masters 2018](https://arxiv.org/abs/1804.07612) showed that the best performance is for mini-batch sizes between 2 and 32.
+Other research on this topic:
+* [Smith 2018](https://arxiv.org/pdf/1711.00489.pdf) - increase the learning rate and scale the batch size (tested for SGD, SGD with momentum, Nesterov momentum and Adam).
+* [Hoffer 2017](https://papers.nips.cc/paper/2017/file/a5e0ff62be0b08456fc7f1e88812af3d-Paper.pdf) - 
+* [Goyal 2018](https://arxiv.org/pdf/1706.02677.pdf) - No loss of accuracy whilst training large batches up to 8192 by a hyperparameter-free linear scaling of the learning rate, "warmup" scheme.
 
-## Useful resources
+
+
+# Useful resources
 
 ### Mathematics
 
