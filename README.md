@@ -120,15 +120,17 @@ where *J* is the cost function and *\alpha* is the learning rate
 ### Stochastic gradient descent
 
 * The gradient of the function f(x) = sum(f_i) is expensive to compute.
-* Hence we approximate this gradient by a randomized version. 
+* Hence we approximate this gradient by a **randomized version**. 
 * Depending on how good this randomized version is, the alg. may or may not converge to a right minimum.
 * Updates weights by computing the gradient of a stochastically chosen function f_i o
 * Makes a very fast progress in the very beginning.
 * In the very beginning, parameter values are very far away from the optimal. Both the full gradient and the stochastic gradient  have the same sign. Hence computing only the stochastoc gradient allows to make an update in the same direction.
 * "The region of confusion" [x_min, x_max] is a range of x_i values which minimize functions f_i, x_min and x_max are the minimal and maximal of these values.
 * Because we compute only one value f_i, it is not possible to say where the minimum of the function f(x) = sum(f_i) is! The algorithm fluctuates around the minimum!
+ 
+**What do we mean by a randomized version?** What is the randomness?  One possibility is to use a uniform probability distribution over N data points. The other version is you pick a training data point without replacement: you use only this randomly picked data until you are done with the entire data set.
 
-
+**In reality, in the current implementations of the SGD in tensorflow (or other frameworks), one picks an f_i point once and goes through the entire data set. **
 
 ### Batch gradient descent 
 * Uses the whole dataset to perform one update
