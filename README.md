@@ -92,9 +92,9 @@ There are two way to address overfitting:
 * This is done by defining a loss function and minimizing it.
 * The way the loss function is defined determined the performance of the model.
 
-* The cost function is  the average of the loss computed for the entire training data set:
+* The cost function is  the average of the loss *L* computed for the entire training data set:
 
-<img src="https://render.githubusercontent.com/render/math?math= J = 1/m \sum_{i=1}^mL^{i}"> 
+<img src="https://render.githubusercontent.com/render/math?math= J = 1/m \sum_{i=1}^m L^{i}"> 
 
 * The cost function has a landscape that varies as a function fo the parameters of the NN.
 * The goal is to find a point where the cost is (approximately) minimal.
@@ -103,46 +103,73 @@ There are two way to address overfitting:
 
 ### Gradient descent
 
-* Update parameters *W* as 
+* Update parameters *w* as 
 
-<img src="https://render.githubusercontent.com/render/math?math=W = W - \alpha \frac{dJ(y,y^\hat)}{dW}"> 
+<img src="https://render.githubusercontent.com/render/math?math=w = w - \alpha \nabla J "> ,
 
-where *J* is the cost function and *\alpha* is the learning rate
+where *J* is the cost function we are seeking to minimize,  *\nabla J = dJ/dw* is the gradient of the cost function computed w.r.t. the parameters *w* and  *\alpha* is the learning rate. In general, *J*  can be expressed as a **finite sum** of loss functions *L* computed for each training example *i*
 
-* When *J* is computed for the whole data set, then the algorithm is sometimes called "batch gradient descent". When it is optimized for a batch of data, it is called "mini-batch GS".
+<img src="https://render.githubusercontent.com/render/math?math= J(w) = \frac{1}{m} \sum_{i=1}^{m} L_i(w)">, 
 
-* For mini-batches, the algorithm converges faster.
+where *m* is the number of training examples. 
 
-* If the learning rate is too small, the algorithm will converge slowly
+* When *J* is computed for the whole  training data set (for all training examples), then the algorithm is sometimes called "batch gradient descent". 
+* When the *J* is computed for a subset of training data and this *J* is used to update parameters of the whole model (consisting of *m* datasets), the algorithm is called "mini-batch GS".
+
+* The learning rate *\alpha* determines the speed of convergence. If it is too small, the algorithm will converge slowly.
 * If the LR is too large, the cost function will oscillate, the algorithm won't converge.
 * Adaptive learning-rate algorithms such as Adam and RMSprop adjust the LR in the course of the optimization.
 
-### Stochastic gradient descent
+### Batch gradient descent
+* May stuck in local minima
 
-* The gradient of the function f(x) = sum(f_i) is expensive to compute.
-* Hence we approximate this gradient by a **randomized version**. 
-* Depending on how good this randomized version is, the alg. may or may not converge to a right minimum.
-* Updates weights by computing the gradient of a stochastically chosen function f_i o
-* Makes a very fast progress in the very beginning.
-* In the very beginning, parameter values are very far away from the optimal. Both the full gradient and the stochastic gradient  have the same sign. Hence computing only the stochastoc gradient allows to make an update in the same direction.
-* "The region of confusion" [x_min, x_max] is a range of x_i values which minimize functions f_i, x_min and x_max are the minimal and maximal of these values.
-* Because we compute only one value f_i, it is not possible to say where the minimum of the function f(x) = sum(f_i) is! The algorithm fluctuates around the minimum!
- 
-**What do we mean by a randomized version?** What is the randomness?  One possibility is to use a uniform probability distribution over N data points. The other version is you pick a training data point without replacement: you use only this randomly picked data until you are done with the entire data set.
+* Uses the whole dataset to compute the gradient used to update the model's parameters.
+* The parameters are updated as follows:
 
-**In reality, in the current implementations of the SGD in tensorflow (or other frameworks), one picks an f_i point once and goes through the entire data set. **
+<img src="https://render.githubusercontent.com/render/math?math=w=w - \alpha  \frac{1}{m} \sum_{i=1}^{m}   \nabla L_i(w)"> 
 
-### Batch gradient descent 
-* Uses the whole dataset to perform one update
-* Computes the gradient of the cost function w.r.t. the parameters theta:
-<img src="https://render.githubusercontent.com/render/math?math=\theta=\theta - \eta \cdot \nabla_\theta J (\theta)"> 
-* Thus very slow
-* Guaranteed to converge to a global min for convex error  surafces, and to a local min for non-convex ones.
+* Thus it is rather slow
+* **Guaranteed to converge to a global min for convex error surafces, and to a local min for non-convex ones.**
 * No online update of the model (with the new examples on-the-fly)
 
-### Batch gradient descent 
-* Performs a parameter update for each training example x(i) and label y(i):
-<img src="https://render.githubusercontent.com/render/math?math=\theta=\theta - \eta \cdot \nabla_\theta J (\theta; x(i); y(i))"> 
+
+### Stochastic gradient descent
+* Escapes local minima 
+*
+* The gradient of the function L(w) = sum(L_i(w)) is expensive to compute.
+* Hence we approximate this gradient by a **randomized version**. 
+* Depending on how good this randomized version is, the alg. may or may not converge to a right minimum.
+
+* Update weights by computing the gradient of a stochastically chosen function L_i(w)
+* Makes a very fast progress in the very beginning.
+* In the very beginning, parameter values *w* are very far away from the optimum. 
+* It turns out that **the full gradient and the stochastic gradient  have the same sign**. 
+* **Hence computing only the stochastic gradient allows to make an update in the same direction.**
+* "The region of confusion" *[w_min, w_max]* is a range of the parameter values *w* that minimize  the loss functions L_i(w).
+* Because in SGD we compute only a randomly chosen *L_i(w)*, it is not possible to tell where the minimum of the function *L(w) = sum(L_i(w))* is! It can be anywhere between  *[w_min, w_max]*. Hence the value of the full gradient's minimum fluctuates  in this range (this is why the SGD oscillates like craze in the vicinity of the minimum)!
+ 
+What do we mean by a randomized version? What is the randomness here?  
+
+1. *The random case (the so-called with resplacement option)*: At each new iteration pick a new dataset from your training data according to a uniform probability distribution (means each time you access the memory with your entire dataset!). 
+2. *The cycle  case (the so-called without replacement option)* Datasets are picked sequentially from the randomly shuffled training set (if you picked no. 1 you will not going to oick it again until you gone thru the whole dataset). 
+2. *The shuffle  case (the so-called without replacement option)* Datasets are picked sequentially from the randomly shuffled training set  (if you picked no. 1 you will not going to oick it again until you gone thru the whole dataset) and the trainign set is shuffled before each pass 
+**Modern ML libraries like tensorflow use option 2 or 3**.
+
+### Mini-batch gradient descent 
+* Performs the parameter update using the gradient computed  for  a set of training examples 
+* Averages out the noise of the cost function of the SGD
+* May even outperform the full GD as the original full batch may not reflect the data that well (because the available "full" dataset is only an aproximation to the actual data)
+
+From the lecture by Prof. Gilbert Strang, MIT, 2018.
+
+GD with monentum term:
+<img src="https://render.githubusercontent.com/render/math?math=x_{k+1}=x_k -s\cdot z_k"> 
+
+<img src="https://render.githubusercontent.com/render/math?math=z_k =  \nabla f_k + \beta z_{k-1} "> 
+
+the equaltion becomes 2nd order diff. eq.
+
+
 * Supposed to take longer if we extend out training dataset by replicating the data [Bishop, p. 264](https://www.amazon.com/Networks-Recognition-Advanced-Econometrics-Paperback/dp/0198538642)
 
 ## Batch size
@@ -168,8 +195,9 @@ Other research on this topic:
 
 ## Papers I read, sorted by date
 
-### **12/2020 (1)**
+### **12/2020 (2)**
 * [Hernández-García 2018](https://arxiv.org/abs/1806.03852)
+* [Bottou 2009](https://leon.bottou.org/publications/pdf/slds-2009.pdf) Curiously Fast Convergence of some Stochastic Gradient Descent Algorithms
 
 ## Papers I read, sorted by topic
 
@@ -177,3 +205,6 @@ Other research on this topic:
 * [Hernández-García 2018](https://arxiv.org/abs/1806.03852)
 ### Regularization
 * [Hernández-García 2018](https://arxiv.org/abs/1806.03852)
+### Gradient Descent
+* [Bottou 2009](https://leon.bottou.org/publications/pdf/slds-2009.pdf) Curiously Fast Convergence of some Stochastic Gradient Descent Algorithms
+
