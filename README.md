@@ -192,7 +192,14 @@ Other research on this topic:
 
 
 ### Data science
+#### Lectures
 [**Fundamentals of Data Science Stanford MS&E 226**](https://web.stanford.edu/class/msande226/l_notes.html) 
+
+#### Other resources
+[**Training big data**](https://gdmarmerola.github.io/big-data-ml-training/) 
+[**Processing big data in chunks**](https://www.dataquest.io/m/164-processing-dataframes-in-chunks/) 
+
+
 
 ## Papers I read, sorted by date
 
