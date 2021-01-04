@@ -73,6 +73,7 @@ Under the assumption the input was scaled with the mean = 0 and a unit variance,
 * The model is "too complicated" for this dataset and hence learnt features which do not exist in reality.
 
 
+
 There are two way to address overfitting:
 1. Increase the amount of data used for training.  
   >>> **Grid search**
