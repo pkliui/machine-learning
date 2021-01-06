@@ -60,6 +60,54 @@ Under the assumption the input was scaled with the mean = 0 and a unit variance,
 * 
 
 
+
+## Data sets
+
+### Train-test-validate
+* Split data into training, validation (optional) and testing
+
+* If no validation:  *Apply 1x to test set
+* If validation: *Apply to test set and refine, apply 1x to validation
+
+### Size
+* Avoid small sample sizes
+**Large samples : 60%-train /  20%-test / 20%-validate
+**Medium sample size: 60%-train / 40%-test
+**Small sample size: Do cross-validation, report caveat of small sample size
+
+### Tips
+* Set test/validation set saside
+* Randomly sample training and test
+* As much diversity as possible - random assignment does this 
+
+## Prediction errors
+
+* In-sample error 
+* Out-of-sample error = generelazitation error
+
+* Is it a cat or not?
+* True positive - it is a cat, and the model confirms this is a cat
+* False positive - it is NOT a cat, but the model confirms this is a cat
+* True negative - it is NOT a cat and the model rejects this is a cat
+* False negative - it is a cat, but the model rejects this is a cat
+
+* **Sensitivity - Pr(positive test | cat) = TP / (TP + FN)   - if you want few missed positives
+* **Specificity - Pr(negative test | not a cat) = TN / (FP + TN)   -  if you want few negatives called positives
+* **Posititve Predictive Value - Pr(cat | positive test) = TP / (TP + FP)
+* **Negative Predictive Value - Pr(not a cat | negative test) = TN / (FN + TN)
+* **Accuracy - Pr(correct outcome) = (TP+TN) / (TP + FP + FN + TN)   - weights false positives and negatives equally 
+
+* Mean squared error (or root mean sq. error) - continuous data, sensitive to outliers
+* Median absolute deviation - cont. data, often more robust
+
+## Cross-validation
+* k-fold CV:
+- large k = low bias, high variance ("overfitting")
+- small k = high bias, low variance ("underfitting")
+
+* **For cross validation,  the data MUST be picked by random sampling without replacement** (if you picked no. 1 you will not going to pick it again until you gone thru the whole dataset - *COMPARE to SGD where the option with replacement is preferrable!*)
+* For CV, picking data **with replacement** will result in an **underestimation of an error** (apparently because we may randomly pick the same data again and again)
+
 ## Underfitting and overfitting
 ### Underfitting 
 * Underfitting means the model was not trained sufficiently long and performs poorly both on train and validation data.
@@ -68,6 +116,8 @@ Under the assumption the input was scaled with the mean = 0 and a unit variance,
 * For example,  by increasing the number of hidden layers and (or) the number of nodes in them.
 
 ### Overfitting
+* Data have signal and noise
+* One can always design a perfect in-sample predictor, you capture bioth signal and noise when you do that. This predictor will not perform well on out of sample data!
 * Overfitting means a model performs very well on train data and poorly on validation data. 
 * An overfit model is characterised by **low bias and high variance**. Its performance **varies** strongly for unseen data. And it performs very well on the seen data.
 * The model is "too complicated" for this dataset and hence learnt features which do not exist in reality.
@@ -152,8 +202,8 @@ where *m* is the number of training examples.
 What do we mean by a randomized version? What is the randomness here?  
 
 1. *The random case (the so-called with resplacement option)*: At each new iteration pick a new dataset from your training data according to a uniform probability distribution (means each time you access the memory with your entire dataset!). 
-2. *The cycle  case (the so-called without replacement option)* Datasets are picked sequentially from the randomly shuffled training set (if you picked no. 1 you will not going to oick it again until you gone thru the whole dataset). 
-2. *The shuffle  case (the so-called without replacement option)* Datasets are picked sequentially from the randomly shuffled training set  (if you picked no. 1 you will not going to oick it again until you gone thru the whole dataset) and the trainign set is shuffled before each pass 
+2. *The cycle  case (the so-called without replacement option)* Datasets are picked sequentially from the randomly shuffled training set (if you picked no. 1 you will not going to pick it again until you gone thru the whole dataset). 
+2. *The shuffle  case (the so-called without replacement option)* Datasets are picked sequentially from the randomly shuffled training set  (if you picked no. 1 you will not going to pick it again until you gone thru the whole dataset) and the training set is shuffled before each pass 
 **Modern ML libraries like tensorflow use option 2 or 3**.
 
 ### Mini-batch gradient descent 
