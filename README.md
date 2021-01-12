@@ -85,31 +85,35 @@ Under the assumption the input was scaled with the mean = 0 and a unit variance,
 * In-sample error 
 * Out-of-sample error = generelazitation error
 
-* Is it a cat or not?
-* True positive - it is a dog, and the model confirms this is a dog
-* False positive - it is NOT a dog, but the model confirms this is a dog
-* True negative - it is NOT a dog and the model rejects this is a dog
-* False negative - it is a dog, but the model rejects this is a dog
+**Example: Is it a dog or not?**
 
-* Pr probability
+* P probability
 * + positive test
 * - negative test
 * D subject is a dog
 * Dc subject is NOT a dog
 
-* **Sensitivity = Pr(+| D) = TP / (TP + FN)   - if you want few missed positives
-* **Specificity = Pr(- | Dc) = TN / (FP + TN)   -  MUST be HIGH for test to be good - if you want few negatives called positives
-* **Posititve Predictive Value = Pr(D | +) = TP / (TP + FP)
-* **Negative Predictive Value = Pr(Dc | -) = TN / (FN + TN)
-* **Accuracy = Pr(correct outcome) = (TP+TN) / (TP + FP + FN + TN)   - weights false positives and negatives equally 
+### Test results, specificity, sensitivity and accuracy of the test
+* True positive - it is a dog, and the model confirms this is a dog
+* False positive - it is NOT a dog, but the model confirms this is a dog
+* True negative - it is NOT a dog and the model rejects this is a dog
+* False negative - it is a dog, but the model rejects this is a dog
 
-* **Bayes formula** (probability of being a dog given positive test result)
+* Sensitivity = P(+|D) = TP / (TP + FN)   - if you want few missed positives
+* Specificity = P(-|Dc) = TN / (FP + TN)   -  MUST be HIGH for test to be good - if you want few negatives called positives
+* Posititve Predictive Value = P(D|+) = TP / (TP + FP)
+* Negative Predictive Value = P(Dc|-) = TN / (FN + TN)
+* Accuracy = P(correct outcome) = (TP+TN) / (TP + FP + FN + TN)   - weights false positives and negatives equally 
 
- <img src="https://render.githubusercontent.com/render/math?math=input=P(D|+)= \frac{P(+|D) P(D)}{P(+|D) P(D) %2B P(+|Dc) P(Dc)}">
+### **Bayes formula** (probability of being a dog given a positive test result)
+
+ <img src="https://render.githubusercontent.com/render/math?math=P(D|%2B)=\frac{P(%2B|D)P(D)}{P(%2B|D)P(D) %2B P(%2B|Dc)P(Dc)}">
 
  * where we can replace
- * P(+|Dc) = 1 - P(-|Dc)
+ * P+|Dc) = 1 - P(-|Dc)
  * P(Dc) = 1 - P(D)
+
+* Lets consider a pregnancy test. The sensitivity of the test, P(+|pregnant), is 75%, the specificity, P(-|not pregnant), is 52% and the prevalence of being pregnant, P(pregant), is 30% (30% of women taking pregnancy tests are actually pregnant). What is a probability of being pregnant (P) having a positive test result (+)? Following the Bayes formula, P(pregnant|+) =  P(+|pregnant)P(pregnant) / (P(+|pregnant)P(pregnant) + *P(+|not pregnant) P (not pregnant))* = P(+|pregnant)P(pregnant) / (P(+|pregnant)P(pregnant) + *1-P(-|not pregnant) (1-P (pregnant)))* = 0.75 * 0.3 / (0.75 * 0.3 + 0.48  * 0.7) = 0.4
 
 
 * Mean squared error (or root mean sq. error) - continuous data, sensitive to outliers
