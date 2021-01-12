@@ -105,8 +105,8 @@ Under the assumption the input was scaled with the mean = 0 and a unit variance,
 
 * **Bayes formula** (probability of being a dog given positive test result)
 
- <img src="https://render.githubusercontent.com/render/math?math= P(D|+)= \frac{P(+|D) P(D)}{P(+|D) P(D) %2B P(+|Dc) P(Dc)}  ">
- 
+ <img src="https://render.githubusercontent.com/render/math?math=input=P(D|+)= \frac{P(+|D) P(D)}{P(+|D) P(D) %2B P(+|Dc) P(Dc)}">
+
  * where we can replace
  * P(+|Dc) = 1 - P(-|Dc)
  * P(Dc) = 1 - P(D)
