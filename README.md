@@ -80,22 +80,37 @@ Under the assumption the input was scaled with the mean = 0 and a unit variance,
 * Randomly sample training and test
 * As much diversity as possible - random assignment does this 
 
-## Prediction errors
+## Prediction errors and probabilities
 
 * In-sample error 
 * Out-of-sample error = generelazitation error
 
 * Is it a cat or not?
-* True positive - it is a cat, and the model confirms this is a cat
-* False positive - it is NOT a cat, but the model confirms this is a cat
-* True negative - it is NOT a cat and the model rejects this is a cat
-* False negative - it is a cat, but the model rejects this is a cat
+* True positive - it is a dog, and the model confirms this is a dog
+* False positive - it is NOT a dog, but the model confirms this is a dog
+* True negative - it is NOT a dog and the model rejects this is a dog
+* False negative - it is a dog, but the model rejects this is a dog
 
-* **Sensitivity - Pr(positive test | cat) = TP / (TP + FN)   - if you want few missed positives
-* **Specificity - Pr(negative test | not a cat) = TN / (FP + TN)   -  if you want few negatives called positives
-* **Posititve Predictive Value - Pr(cat | positive test) = TP / (TP + FP)
-* **Negative Predictive Value - Pr(not a cat | negative test) = TN / (FN + TN)
-* **Accuracy - Pr(correct outcome) = (TP+TN) / (TP + FP + FN + TN)   - weights false positives and negatives equally 
+* Pr probability
+* + positive test
+* - negative test
+* D subject is a dog
+* Dc subject is NOT a dog
+
+* **Sensitivity = Pr(+| D) = TP / (TP + FN)   - if you want few missed positives
+* **Specificity = Pr(- | Dc) = TN / (FP + TN)   -  MUST be HIGH for test to be good - if you want few negatives called positives
+* **Posititve Predictive Value = Pr(D | +) = TP / (TP + FP)
+* **Negative Predictive Value = Pr(Dc | -) = TN / (FN + TN)
+* **Accuracy = Pr(correct outcome) = (TP+TN) / (TP + FP + FN + TN)   - weights false positives and negatives equally 
+
+* **Bayes formula** (probability of being a dog given positive test result)
+
+ <img src="https://render.githubusercontent.com/render/math?math= P(D|+)= \frac{P(+|D) P(D)}{P(+|D) P(D) %2B P(+|Dc) P(Dc)}  ">
+ 
+ * where we can replace
+ * P(+|Dc) = 1 - P(-|Dc)
+ * P(Dc) = 1 - P(D)
+
 
 * Mean squared error (or root mean sq. error) - continuous data, sensitive to outliers
 * Median absolute deviation - cont. data, often more robust
