@@ -19,6 +19,15 @@ This documents records examples of my independent coursework on machine learning
 
 # My notes and thoughts
 
+## Tips and tricks
+
+### Prevent Colab from disconnecting by adding this code to the browser's console
+* function ClickConnect(){
+    console.log("Clicked on connect button"); 
+    document.querySelector("colab-connect-button").click()
+}
+setInterval(ClickConnect,60000)
+
 ## Normalization
 ### Batch normalization
 * Normalizing  the input. Is it important? Why? Connection to the initialization?
