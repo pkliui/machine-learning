@@ -213,8 +213,8 @@ where *m* is the number of training examples.
 
 
 ### Stochastic gradient descent
+* MIT 18.065 Lecture on SGD https://www.youtube.com/watch?v=k3AiUhwHQ28
 * Escapes local minima 
-*
 * The gradient of the function L(w) = sum(L_i(w)) is expensive to compute.
 * Hence we approximate this gradient by a **randomized version**. 
 * Depending on how good this randomized version is, the alg. may or may not converge to a right minimum.
