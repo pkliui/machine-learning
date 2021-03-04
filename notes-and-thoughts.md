@@ -233,6 +233,10 @@ the equaltion becomes 2nd order diff. eq.
 
 * Supposed to take longer if we extend out training dataset by replicating the data [Bishop, p. 264](https://www.amazon.com/Networks-Recognition-Advanced-Econometrics-Paperback/dp/0198538642)
 
+
+### Adam
+* Like SGD,but with adaptive learning rate (no need to tune learning rate and batch size)
+
 ## Batch size
 * [Masters 2018](https://arxiv.org/abs/1804.07612) showed that the best performance is for mini-batch sizes between 2 and 32.
 Other research on this topic:
