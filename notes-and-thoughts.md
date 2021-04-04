@@ -163,6 +163,13 @@ There are two way to address overfitting:
 * For classification, what we want instead is a distance between probabilities, and this is what cross-entropy provides. Cross-entropy is a sort of measure for the distance from one probability distribution to another.
 * The cross-entropy and accuracy functions both require probabilities as inputs, meaning, numbers from 0 to 1. To covert the real-valued outputs produced by a dense layer into probabilities, we attach a new kind of activation function, the sigmoid activation.
 
+## Regularization
+
+* **Early stopping** - compute train and validation error and stop when your validation error reaches its minimum
+* **Perturbing training data** - adding some noise to training data - altering each training example with mean=0, and std=very small  - results in a regularization effect
+* Modern perturbation strategies: 
+* **Dropout** - with probability $p$ for each unit $j$ set activation $a_j=0$ on each forward pass
+* **Batch normalization* - *
 
 
 ## Optimization algorithms 
