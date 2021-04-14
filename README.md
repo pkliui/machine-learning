@@ -2,6 +2,11 @@
 
 This documents records examples of my independent coursework on machine learning. 
 
+## MIT 6.036 Introduction to Machine Learning - Prof. Leslie Kaelbling
+
+
+
+
 ## CNN in Tensorflow
 
 ### Image classification using a simple CNN model
