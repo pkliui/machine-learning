@@ -20,7 +20,7 @@ This documents records examples of my independent coursework on machine learning
 * [Cats vs dogs example 3](https://github.com/pkliui/machine-learning/blob/master/tensorflow-developer-specialization/course2-cnns-in-tensorflow/week2/Course_2_Lesson_2_Cats_vs_Dogs_With_and_Without_Augmentation.md) - an example of image classificaion using CNN w/ and w/o augmentation
 
 ### Week 3 - Transfer learning for binary image classification (cats vs dogs)
-* [Cats vs dogs example 4](https://github.com/pkliui/machine-learning/blob/master/tensorflow-developer-specialization/course2-cnns-in-tensorflow/week3/Course_2_Example_Applying_Transfer_Learning_to_Cats_v_Dogs.mdd) - shows an improvement in classif. accuracy using transfer learning
+* [Cats vs dogs example 4](https://github.com/pkliui/machine-learning/blob/master/tensorflow-developer-specialization/course2-cnns-in-tensorflow/week3/Course_2_Example_Applying_Transfer_Learning_to_Cats_v_Dogs.md) - shows an improvement in classif. accuracy using transfer learning
 
 ### Week 4 - Multi-class classification using data augmentation 
 * [Sign language MNIST example](https://github.com/pkliui/machine-learning/blob/master/tensorflow-developer-specialization/course2-cnns-in-tensorflow/week4/Course_2_Exercise_4_Multi_class_classifier_using_Augmentation.md)
