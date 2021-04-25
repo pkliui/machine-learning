@@ -11,15 +11,7 @@ This documents records examples of my independent coursework on machine learning
 
 ## [Course 2 CNN in Tensorflow](https://www.coursera.org/learn/convolutional-neural-networks-tensorflow?specialization=tensorflow-in-practice){:target="_blank"}
 
+### Week 1 - Image classificaion (cats-vs-dogs) using a simple CNN model
 
-### Image classification using a simple CNN model
-[Cats_vs_Dogs_Classification_Simple_Model_Overfitting_Example]()
-* Classification of cats and dogs images using a simple CNN model. An example which leads to overfiting.
-
-[Cats_vs_Dogs_With_and_Without_Augmentation]()
-* Classification of cats and dogs images with and without data augmentation.
-
-###  Image classification using a CNN with data augmentation
-[Course 2 - Exercise 2 - Cats vs. Dogs using augmentation]()
-* Training a CNN on the full cats-vs-dogs dataset using data augmentation.
-
+* [First model, small data set, an example that leads to overfitting](https://github.com/pkliui/machine-learning/blob/master/tensorflow-developer-specialization/course2-cnns-in-tensorflow/week1/Course_2_Exercise_1_Cats_vs_Dogs_Full_Dataset.md)
+* [Training using full data set](https://github.com/pkliui/machine-learning/blob/master/tensorflow-developer-specialization/course2-cnns-in-tensorflow/week1/Course_2_Exercise_1_Cats_vs_Dogs_Full_Dataset.md)
