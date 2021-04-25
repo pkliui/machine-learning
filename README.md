@@ -9,7 +9,19 @@ This documents records examples of my independent coursework on machine learning
 
 # [DeepLearning.ai Tensorflow Developer Professional Certificate](https://www.coursera.org/professional-certificates/tensorflow-in-practice)
 
-## [Course 2 CNN in Tensorflow](https://www.coursera.org/learn/convolutional-neural-networks-tensorflow?specialization=tensorflow-in-practice)
+## [Course 1 - Introduction to Tensorflow](https://www.coursera.org/learn/introduction-tensorflow?specialization=tensorflow-in-practice)
+
+### Exploring neural networks
+* Introduction to NNs, tweaking number of neurons,  layers and epochs, impact of  image normalization, overfitting and callbacks for early stopping
+* [A computer vision example](https://github.com/pkliui/machine-learning/blob/master/tensorflow-developer-specialization/course1-intro-to-tensorflow/Copy_of_Course_1_A_computer_vision_example.md)
+
+### Convolutional neural networks
+* Convoluions, max-pooling
+* Tweaking number of filters and number of layers
+* [Fashion MNIST example](https://github.com/pkliui/machine-learning/blob/master/tensorflow-developer-specialization/course1-intro-to-tensorflow/Copy_of_Course_1_Convolutional_nets.md)
+
+
+## [Course 2 - CNN in Tensorflow](https://www.coursera.org/learn/convolutional-neural-networks-tensorflow?specialization=tensorflow-in-practice)
 
 ### Week 1 - Simple CNN for binary image classification (cats vs dogs)
 
