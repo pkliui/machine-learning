@@ -1,7 +1,9 @@
 ##### Copyright 2019 The TensorFlow Authors.
 
+# Сats vs dogs classification using transfer learning
 
-```
+
+```python
 #@title Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -15,10 +17,10 @@
 # limitations under the License.
 ```
 
-Load InceptionV3 model
+## Download InceptionV3 model
 
 
-```
+```python
 import os
 
 from tensorflow.keras import layers
@@ -61,10 +63,10 @@ last_output = last_layer.output
     last layer output shape:  (None, 7, 7, 768)
 
 
-Build and compile the model
+## Build and compile the model
 
 
-```
+```python
 from tensorflow.keras.optimizers import RMSprop
 
 # Flatten the output layer to 1 dimension
@@ -84,10 +86,10 @@ model.compile(optimizer = RMSprop(lr=0.0001),
 
 ```
 
-Load data
+## Load data
 
 
-```
+```python
 !wget --no-check-certificate \
         https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip \
        -O /tmp/cats_and_dogs_filtered.zip
@@ -159,10 +161,10 @@ validation_generator =  test_datagen.flow_from_directory( validation_dir,
     Found 1000 images belonging to 2 classes.
 
 
-Train the model
+## Train the model
 
 
-```
+```python
 history = model.fit(
             train_generator,
             validation_data = validation_generator,
@@ -214,10 +216,10 @@ history = model.fit(
     100/100 - 17s - loss: 0.1189 - accuracy: 0.9570 - val_loss: 0.1202 - val_accuracy: 0.9730
 
 
-Plot accuracy at each iteration
+## Plot accuracy at each iteration
 
 
-```
+```python
 import matplotlib.pyplot as plt
 acc = history.history['accuracy']
 val_acc = history.history['val_accuracy']
@@ -237,7 +239,7 @@ plt.show()
 ```
 
 
-![png](Course_2_Example_Applying_Transfer_Learning_to_Cats_v_Dogs_files/Course_2_Example_Applying_Transfer_Learning_to_Cats_v_Dogs_11_0.png)
+![png](Course_2_Example_Applying_Transfer_Learning_to_Cats_v_Dogs_files/Course_2_Example_Applying_Transfer_Learning_to_Cats_v_Dogs_12_0.png)
 
 
 
@@ -247,6 +249,6 @@ plt.show()
 With transfer learning we are able to reach 95% accuracy, while without the augmentation the maximal accuracy was around 85%
 
 
-```
+```python
 
 ```
