@@ -1,4 +1,7 @@
-```
+# Sign language MNIST classification using CNN and data augmentation
+
+
+```python
 #@title Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -12,10 +15,10 @@
 # limitations under the License.
 ```
 
-# Get data
+## Get data
 
 
-```
+```python
 import csv
 import numpy as np
 import tensorflow as tf
@@ -29,7 +32,7 @@ Sign up and download to find 2 CSV files: sign_mnist_test.csv and sign_mnist_tra
 
 
 
-```
+```python
 uploaded=files.upload()
 ```
 
@@ -49,7 +52,7 @@ uploaded=files.upload()
 
 
 
-```
+```python
 def get_data(filename):
   # You will need to write code that will read the file passed
   # into this function. The first line contains the column headers
@@ -115,7 +118,7 @@ print(testing_labels.shape)
 
 
 
-```
+```python
 # In this section you will have to add another dimension to the data
 # So, for example, if your array is (10000, 28, 28)
 # You will need to make it (10000, 28, 28, 1)
@@ -152,10 +155,10 @@ print(testing_images.shape)
     (7172, 28, 28, 1)
 
 
-# Build a CNN model and train it
+## Build a CNN model and train it
 
 
-```
+```python
 # Define the model
 # Use no more than 2 Conv2D and 2 MaxPooling2D
 model = tf.keras.models.Sequential([
@@ -229,10 +232,10 @@ model.evaluate(testing_images, testing_labels)
 
 
 
-# Plot the accuracy of the training
+## Plot the accuracy of the training
 
 
-```
+```python
 # Plot the chart for accuracy and loss on both training and validation
 
 import matplotlib.pyplot as plt
@@ -258,9 +261,9 @@ plt.show()
 ```
 
 
-![png](Course_2_Exercise_4_Multi_class_classifier_using_Augmentation_files/Course_2_Exercise_4_Multi_class_classifier_using_Augmentation_10_0.png)
+![png](Course_2_Exercise_4_Multi_class_classifier_using_Augmentation_files/Course_2_Exercise_4_Multi_class_classifier_using_Augmentation_11_0.png)
 
 
 
-![png](Course_2_Exercise_4_Multi_class_classifier_using_Augmentation_files/Course_2_Exercise_4_Multi_class_classifier_using_Augmentation_10_1.png)
+![png](Course_2_Exercise_4_Multi_class_classifier_using_Augmentation_files/Course_2_Exercise_4_Multi_class_classifier_using_Augmentation_11_1.png)
 
