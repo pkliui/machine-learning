@@ -7,9 +7,9 @@ This documents records examples of my independent coursework on machine learning
 
 
 
-# [DeepLearning.ai Tensorflow Developer Professional Certificate](https://www.coursera.org/professional-certificates/tensorflow-in-practice)
+# [DeepLearning.ai Tensorflow Developer Professional Certificate](https://www.coursera.org/professional-certificates/tensorflow-in-practice){:target="_blank"}
 
-## [Course 2 CNN in Tensorflow](https://www.coursera.org/learn/convolutional-neural-networks-tensorflow?specialization=tensorflow-in-practice)
+## [Course 2 CNN in Tensorflow](https://www.coursera.org/learn/convolutional-neural-networks-tensorflow?specialization=tensorflow-in-practice){:target="_blank"}
 
 
 ### Image classification using a simple CNN model
