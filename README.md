@@ -2,7 +2,15 @@
 
 This documents records examples of my independent coursework on machine learning. 
 
-## CNN in Tensorflow
+# MIT 6.036 Introduction to Machine Learning - Prof. Leslie Kaelbling
+
+
+
+
+# [DeepLearning.ai Tensorflow Developer Professional Certificate](https://www.coursera.org/professional-certificates/tensorflow-in-practice){:target="_blank"}
+
+## [Course 2 CNN in Tensorflow](https://www.coursera.org/learn/convolutional-neural-networks-tensorflow?specialization=tensorflow-in-practice){:target="_blank"}
+
 
 ### Image classification using a simple CNN model
 [Cats_vs_Dogs_Classification_Simple_Model_Overfitting_Example]()
