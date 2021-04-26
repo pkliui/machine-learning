@@ -1,6 +1,8 @@
 # Deep learning specializaion
 [link to course materials](https://www.coursera.org/specializations/deep-learning)
 
+Exercises and projects completed by me in the course:
+
 ## Course 1  - Neural networks and deep learning
 
 * [Python recap](https://github.com/pkliui/machine-learning/blob/master/deep-learning-dl-ai/course1-neural-nets/week2-logistic-reg/python-basics/basics-v3a.md)
