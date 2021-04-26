@@ -1,5 +1,5 @@
 # Deep learning specializaion
-[link to course materials](https://www.coursera.org/specializations/deep-learning
+[link to course materials](https://www.coursera.org/specializations/deep-learning)
 
 ## [Course 1](https://www.coursera.org/learn/neural-networks-deep-learning?specialization=deep-learning)  - Neural networks and deep learning
 
