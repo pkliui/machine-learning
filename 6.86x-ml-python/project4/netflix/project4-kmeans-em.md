@@ -11,6 +11,10 @@ sys.path.insert(0,sourcepath)
 %autoreload 2
 ```
 
+    The autoreload extension is already loaded. To reload it, use:
+      %reload_ext autoreload
+
+
 # Project 4 of MITx 6.86x class on Machine Learning in Python
 
 
@@ -259,13 +263,7 @@ Generate analogous plots to K-means using your EM implementation. Note that the 
 
 
 ```python
-import em as em
-```
-
-
-```python
-mixture, post = common.init(X, 2, 0)
-_ = em.run(X, mixture,post)
+import naive_em as naive_em
 ```
 
 # K = 1 
@@ -278,7 +276,7 @@ total_cost_km = []
 
 for ii in range(0,5):
     gaussian_mix, post =  common.init(X=X,K=K,seed=ii)
-    new_gaussian_mix_em, new_post_em, cost_em = em.run(X=X,mixture=gaussian_mix,post=post)
+    new_gaussian_mix_em, new_post_em, cost_em = naive_em.run(X=X,mixture=gaussian_mix,post=post)
     total_cost_em.append(cost_em)
     new_gaussian_mix_km, new_post_km, cost_km = kmeans.run(X=X,mixture=gaussian_mix,post=post)
     total_cost_km.append(cost_km)
@@ -299,31 +297,31 @@ print("k-means min cost for K = {} = ".format(str(K)), min(total_cost_km))
 ```
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_20_0.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_19_0.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_20_1.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_19_1.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_20_2.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_19_2.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_20_3.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_19_3.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_20_4.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_19_4.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_20_5.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_19_5.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_20_6.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_19_6.png)
 
 
     EM max likelihood for K = 1 =  -1307.2234317600942
@@ -344,7 +342,7 @@ total_cost_km = []
 
 for ii in range(0,5):
     gaussian_mix, post =  common.init(X=X,K=K,seed=ii)
-    new_gaussian_mix_em, new_post_em, cost_em = em.run(X=X,mixture=gaussian_mix,post=post)
+    new_gaussian_mix_em, new_post_em, cost_em = naive_em.run(X=X,mixture=gaussian_mix,post=post)
     total_cost_em.append(cost_em)
     new_gaussian_mix_km, new_post_km, cost_km = kmeans.run(X=X,mixture=gaussian_mix,post=post)
     total_cost_km.append(cost_km)
@@ -365,31 +363,31 @@ print("k-means min cost for K = {} = ".format(str(K)), min(total_cost_km))
 ```
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_23_0.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_22_0.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_23_1.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_22_1.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_23_2.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_22_2.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_23_3.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_22_3.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_23_4.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_22_4.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_23_5.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_22_5.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_23_6.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_22_6.png)
 
 
     EM max likelihood for K = 2 =  -1175.7146293666792
@@ -410,7 +408,7 @@ total_cost_km = []
 
 for ii in range(0,5):
     gaussian_mix, post =  common.init(X=X,K=K,seed=ii)
-    new_gaussian_mix_em, new_post_em, cost_em = em.run(X=X,mixture=gaussian_mix,post=post)
+    new_gaussian_mix_em, new_post_em, cost_em = naive_em.run(X=X,mixture=gaussian_mix,post=post)
     total_cost_em.append(cost_em)
     new_gaussian_mix_km, new_post_km, cost_km = kmeans.run(X=X,mixture=gaussian_mix,post=post)
     total_cost_km.append(cost_km)
@@ -431,31 +429,31 @@ print("k-means min cost for K = {} = ".format(str(K)), min(total_cost_km))
 ```
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_26_0.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_25_0.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_26_1.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_25_1.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_26_2.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_25_2.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_26_3.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_25_3.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_26_4.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_25_4.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_26_5.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_25_5.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_26_6.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_25_6.png)
 
 
     EM max likelihood for K = 3 =  -1138.8908996872672
@@ -478,7 +476,7 @@ total_cost_km = []
 
 for ii in range(0,5):
     gaussian_mix, post =  common.init(X=X,K=K,seed=ii)
-    new_gaussian_mix_em, new_post_em, cost_em = em.run(X=X,mixture=gaussian_mix,post=post)
+    new_gaussian_mix_em, new_post_em, cost_em = naive_em.run(X=X,mixture=gaussian_mix,post=post)
     total_cost_em.append(cost_em)
     new_gaussian_mix_km, new_post_km, cost_km = kmeans.run(X=X,mixture=gaussian_mix,post=post)
     total_cost_km.append(cost_km)
@@ -499,31 +497,31 @@ print("k-means min cost for K = {} = ".format(str(K)), min(total_cost_km))
 ```
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_29_0.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_28_0.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_29_1.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_28_1.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_29_2.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_28_2.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_29_3.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_28_3.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_29_4.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_28_4.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_29_5.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_28_5.png)
 
 
 
-![png](project4-kmeans-em_files/project4-kmeans-em_29_6.png)
+![png](project4-kmeans-em_files/project4-kmeans-em_28_6.png)
 
 
     EM max likelihood for K = 4 =  -1138.6011756994856
@@ -531,3 +529,98 @@ print("k-means min cost for K = {} = ".format(str(K)), min(total_cost_km))
 
 
 The same reasoning as for the K=3 case.
+
+# Bayesian information criterion
+
+BIC is a criterion for model selection that offers  a trade-off between the log-likelihood of he data and the number of parameters used by the model. We look for the model that has the highest BIC:
+
+$BIC = L - 0.5 \cdot n_p \cdot log n_d$,
+
+where $L$ is the max log-likelihood of the data used for the model, $n_p$ is he number of free parameters and $n_d$ is the number of data points.
+
+
+```python
+max_bic = None
+max_bic2plot = []
+K2plot = []
+#
+# go thru different clusters
+for K in range(1, 5):
+    K2plot.append(K)
+    max_ll = None
+    best_seed = None
+    #
+    # go thru different seeds
+    for seed in range(0, 5):
+        #
+        # initialize and run the EM to get the mixture and log-likelihood for the current seed and K
+        mixture, post = common.init(X, K, seed)
+        mixture, post, ll = naive_em.run(X, mixture, post)
+        #
+        # check if likelihood is the largest, if yes, then update the best seed
+        if max_ll is None or ll > max_ll:
+            max_ll = ll
+            best_seed = seed
+    #
+    # run the EM again, this time with the best seed
+    mixture, post = common.init(X, K, best_seed)
+    mixture, post, ll = naive_em.run(X, mixture, post)
+    #
+    # run BIC to get the quality metric for the current number of clusters
+    bic = common.bic(X, mixture, ll)
+    #
+    # update the best BIC
+    if max_bic is None or bic > max_bic:
+        max_bic = bic
+        max_bic2plot.append(max_bic)
+    else:
+        max_bic2plot.append(bic)
+    # print results
+    title = "EM for K={}, seed={}, ll={}, bic={}".format(K, best_seed, ll, max_bic)
+    print(title)
+    common.plot(X, mixture, post, title)
+    
+plt.plot(K2plot,max_bic2plot)
+plt.xlabel("K")
+plt.ylabel("BIC")
+plt.show()
+```
+
+    EM for K=1, seed=0, ll=-1307.2234317600942, bic=-1315.5056231368876
+
+
+
+![png](project4-kmeans-em_files/project4-kmeans-em_32_1.png)
+
+
+    EM for K=2, seed=2, ll=-1175.7146293666792, bic=-1195.039742579197
+
+
+
+![png](project4-kmeans-em_files/project4-kmeans-em_32_3.png)
+
+
+    EM for K=3, seed=0, ll=-1138.8908996872672, bic=-1169.2589347355095
+
+
+
+![png](project4-kmeans-em_files/project4-kmeans-em_32_5.png)
+
+
+    EM for K=4, seed=4, ll=-1138.6011756994856, bic=-1169.2589347355095
+
+
+
+![png](project4-kmeans-em_files/project4-kmeans-em_32_7.png)
+
+
+
+![png](project4-kmeans-em_files/project4-kmeans-em_32_8.png)
+
+
+> As per BIC, the model with 3 Gaussians has a better fit to the data than other models. 
+
+
+```python
+
+```
