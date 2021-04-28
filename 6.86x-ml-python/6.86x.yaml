@@ -1,0 +1,15 @@
+name: 6.86x
+
+channels:
+  - pytorch
+
+dependencies:
+  - python=3.6
+  - pytorch
+  - numpy
+  - matplotlib
+  - scipy
+  - scikit-learn
+  - pip
+  - pip:
+      - tdqm
