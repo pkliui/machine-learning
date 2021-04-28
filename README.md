@@ -5,6 +5,7 @@ This documents records examples of my independent coursework on machine learning
 ### Classic machine learning courses:
 * [Stanford University - Machine Learning]
 * [MIT 6.036 - Introduction to Machine Learning]
+* [MITx 6.38x - Machine Learning with Python](https://github.com/pkliui/machine-learning/blob/master/6.86x-ml-python.md)
 
 ### Deep learning:
 * [Deeplearning.ai  - Deep Learning Specializaion](https://github.com/pkliui/machine-learning/blob/master/deep-learning-specialization.md)
