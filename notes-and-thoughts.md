@@ -10,6 +10,21 @@
 }
 setInterval(ClickConnect,60000)
 
+### Load data from kaggle to colab
+
+!pip install -q kaggle
+!pip install --upgrade --force-reinstall --no-deps kaggle
+
+from google.colab import files
+files.upload()
+
+//загружаем свой токен kaggle.json
+! mkdir -p  ~/.kaggle/
+!cp kaggle.json ~/.kaggle/kaggle.json
+!chmod 600 /root/.kaggle/kaggle.json
+
+! kaggle competitions download  -c journey-springfield
+
 ## Normalization
 ### Batch normalization
 * Normalizing  the input. Is it important? Why? Connection to the initialization?
