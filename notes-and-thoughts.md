@@ -312,10 +312,14 @@ Other research on this topic:
 * [Hernández-García 2018](https://arxiv.org/abs/1806.03852)
 * [Bottou 2009](https://leon.bottou.org/publications/pdf/slds-2009.pdf) Curiously Fast Convergence of some Stochastic Gradient Descent Algorithms
 
+### **07/2021 (1) **
+* [Ekin D. Cubuk e al. 2018, AutoAugment: Learning Augmentation Policies from Data](https://arxiv.org/abs/1805.09501)
+
 ## Papers I read, sorted by topic
 
 ### Data augmentation
 * [Hernández-García 2018](https://arxiv.org/abs/1806.03852)
+* [Ekin D. Cubuk e al. 2018, AutoAugment: Learning Augmentation Policies from Data](https://arxiv.org/abs/1805.09501)
 ### Regularization
 * [Hernández-García 2018](https://arxiv.org/abs/1806.03852)
 ### Gradient Descent
