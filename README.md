@@ -1,15 +1,18 @@
-## Independent coursework on machine learning
+## Machine learning projects
 
-This documents records examples of my independent coursework on machine learning.  Click to see machine learning exercises and projects I completed in each course.
+### Kaggle
 
-### Kaggle Machine learning projects
-* **Digits classification, LeNet-5 architecture**
-  * [MNIST-full - Tweaking LeNet5 - 99.3% validation accuracy](https://www.kaggle.com/kliuiev/mnist-tweaking-cnn-architecture)
-  * [MNIST-full - Implementation of LeNet5 - 87.7% test accuracy](https://www.kaggle.com/kliuiev/mnist-lenet5)
-  * [MNIST-kaggle - Implementation of LeNet5 - Comparison of fully connected C3/S2 layers vs. dropped connections in the original model](https://www.kaggle.com/kliuiev/mnist-lenet5-kaggle-data)
-* **Binary classification by transfer learning**
-  * [Cats vs.dogs-kaggle - VGG16 model -  using keras tuner for data augmentation - 96.2% validation accuracy](https://www.kaggle.com/kliuiev/cats-vs-dogs-vgg16-keras-tuner)
-  * [Cats vs.dogs-kaggle - Xception model - 97.5% validation accuracy](https://www.kaggle.com/kliuiev/cats-vs-dogs-xception-augmentation-sequential)
+* **Implementation of Segnet and UNet for image segmentation**
+  * [ADDI-PD2 - UNet](https://www.kaggle.com/kliuiev/16-hw-semantic-segmentation-unet)
+
+* **Digits classification, implementation of LeNet-5 in keras/tensoflow**
+  * [MNIST-full - Tweaking LeNet5](https://www.kaggle.com/kliuiev/mnist-tweaking-cnn-architecture)
+  * [MNIST-full - LeNet5](https://www.kaggle.com/kliuiev/mnist-lenet5)
+  * [MNIST-kaggle - LeNet5 - custom C3/S2 layer](https://www.kaggle.com/kliuiev/mnist-lenet5-kaggle-data)
+  
+* **Binary classification by transfer learning in keras/tensorflow**
+  * [Cats vs.dogs-kaggle - VGG16](https://www.kaggle.com/kliuiev/cats-vs-dogs-vgg16-keras-tuner)
+  * [Cats vs.dogs-kaggle - Xception](https://www.kaggle.com/kliuiev/cats-vs-dogs-xception-augmentation-sequential)
 
 
 ### Classical machine learning courses:
