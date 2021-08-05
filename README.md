@@ -15,15 +15,11 @@
   * [Cats vs.dogs-kaggle - Xception](https://www.kaggle.com/kliuiev/cats-vs-dogs-xception-augmentation-sequential)
 
 
-### Classical machine learning courses:
+### Online courses
 * [Stanford University - Machine Learning]
 * [MIT 6.036 - Introduction to Machine Learning]
 * [MITx 6.38x - Machine Learning with Python](https://github.com/pkliui/machine-learning/blob/master/6.86x-ml-python.md)
-
-### Deep learning specialization:
 * [Deeplearning.ai  - Deep Learning Specializaion](https://github.com/pkliui/machine-learning/blob/master/deep-learning-specialization.md)
-
-### Tensorflow courses:
 * [DeepLearning.ai - Tensorflow Developer Professional Certificate](https://github.com/pkliui/machine-learning/blob/master/tensorflow-developer.md)
 
 
