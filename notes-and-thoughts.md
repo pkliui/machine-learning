@@ -312,10 +312,14 @@ Other research on this topic:
 * [Hernández-García 2018](https://arxiv.org/abs/1806.03852)
 * [Bottou 2009](https://leon.bottou.org/publications/pdf/slds-2009.pdf) Curiously Fast Convergence of some Stochastic Gradient Descent Algorithms
 
-### **07/2021 (1) **
+### **07/2021 (2) **
 * [Ekin D. Cubuk e al. 2018, AutoAugment: Learning Augmentation Policies from Data](https://arxiv.org/abs/1805.09501)
 * [Vincent Dumoulin and Francesco Visin, A guide to convolution arithmetic for deep learning](https://arxiv.org/pdf/1603.07285.pdf)
 
+### **08/2021 (2) **
+* [Huang et al. Densely Connected Convolutional Networks, 2018](https://arxiv.org/pdf/1608.06993.pdf)
+* [He et al.Deep Residual Learning for Image Recognition, 2015](https://arxiv.org/pdf/1512.03385.pdf)
+* 
 ## Papers I read, sorted by topic (roughly)
 
 
@@ -326,8 +330,14 @@ Other research on this topic:
 ### Data augmentation
 * [Hernández-García 2018](https://arxiv.org/abs/1806.03852)
 * [Ekin D. Cubuk e al. 2018, AutoAugment: Learning Augmentation Policies from Data](https://arxiv.org/abs/1805.09501)
+
+
 ### Gradient Descent
-* [Bottou 2009](https://leon.bottou.org/publications/pdf/slds-2009.pdf) Curiously Fast Convergence of some Stochastic Gradient Descent Algorithms
+* [Bottou, Curiously Fast Convergence of some Stochastic Gradient Descent Algorithms, 2009](https://leon.bottou.org/publications/pdf/slds-2009.pdf) 
 
 ### Regularization
 * [Hernández-García 2018](https://arxiv.org/abs/1806.03852)
+
+### RNN
+* [Huang et al. Densely Connected Convolutional Networks, 2018](https://arxiv.org/pdf/1608.06993.pdf)
+* [He et al.Deep Residual Learning for Image Recognition, 2015](https://arxiv.org/pdf/1512.03385.pdf)
