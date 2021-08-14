@@ -319,7 +319,8 @@ Other research on this topic:
 ### **08/2021 (2) **
 * [Huang et al. Densely Connected Convolutional Networks, 2018](https://arxiv.org/pdf/1608.06993.pdf)
 * [He et al.Deep Residual Learning for Image Recognition, 2015](https://arxiv.org/pdf/1512.03385.pdf)
-* 
+* [Dong, C., Loy, C. C., He, K., & Tang, X. (2016). Image Super-Resolution Using Deep Convolutional Networks. IEEE Transactions on Pattern Analysis and Machine Intelligence, 38(2), 295–307](https://doi.org/10.1109/TPAMI.2015.2439281)
+
 ## Papers I read, sorted by topic (roughly)
 
 
@@ -341,3 +342,6 @@ Other research on this topic:
 ### RNN
 * [Huang et al. Densely Connected Convolutional Networks, 2018](https://arxiv.org/pdf/1608.06993.pdf)
 * [He et al.Deep Residual Learning for Image Recognition, 2015](https://arxiv.org/pdf/1512.03385.pdf)
+
+### Super-resolution
+* [Dong, C., Loy, C. C., He, K., & Tang, X. (2016). Image Super-Resolution Using Deep Convolutional Networks. IEEE Transactions on Pattern Analysis and Machine Intelligence, 38(2), 295–307](https://doi.org/10.1109/TPAMI.2015.2439281)
