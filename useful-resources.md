@@ -29,10 +29,11 @@
 * [Ekin D. Cubuk e al. 2018, AutoAugment: Learning Augmentation Policies from Data](https://arxiv.org/abs/1805.09501)
 * [Vincent Dumoulin and Francesco Visin, A guide to convolution arithmetic for deep learning](https://arxiv.org/pdf/1603.07285.pdf)
 
-### **08/2021 (2) **
+### **08/2021 (4) **
 * [Huang et al. Densely Connected Convolutional Networks, 2018](https://arxiv.org/pdf/1608.06993.pdf)
 * [He et al.Deep Residual Learning for Image Recognition, 2015](https://arxiv.org/pdf/1512.03385.pdf)
 * [Dong, C., Loy, C. C., He, K., & Tang, X. (2016). Image Super-Resolution Using Deep Convolutional Networks. IEEE Transactions on Pattern Analysis and Machine Intelligence, 38(2), 295–307](https://doi.org/10.1109/TPAMI.2015.2439281)
+* [Simonyan, K., & Zisserman, A. (2015). Very deep convolutional networks for large-scale image recognition. 3rd International Conference on Learning Representations, ICLR 2015](https://arxiv.org/pdf/1409.1556v4.pdf)
 
 ## Papers I read, sorted by topic (roughly)
 
@@ -58,3 +59,4 @@
 
 ### Super-resolution
 * [Dong, C., Loy, C. C., He, K., & Tang, X. (2016). Image Super-Resolution Using Deep Convolutional Networks. IEEE Transactions on Pattern Analysis and Machine Intelligence, 38(2), 295–307](https://doi.org/10.1109/TPAMI.2015.2439281)
+* [Simonyan, K., & Zisserman, A. (2015). Very deep convolutional networks for large-scale image recognition. 3rd International Conference on Learning Representations, ICLR 2015](https://arxiv.org/pdf/1409.1556v4.pdf)
