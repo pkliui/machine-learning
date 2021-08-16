@@ -56,6 +56,7 @@
 ### RNN
 * [Huang et al. Densely Connected Convolutional Networks, 2018](https://arxiv.org/pdf/1608.06993.pdf)
 * [He et al.Deep Residual Learning for Image Recognition, 2015](https://arxiv.org/pdf/1512.03385.pdf)
+* [Simonyan, K., & Zisserman, A. (2015). Very deep convolutional networks for large-scale image recognition. 3rd International Conference on Learning Representations, ICLR 2015 - Conference Track Proceedings, 1–13. Retrieved from https://arxiv.org/pdf/1409.1556v4.pdf]()
 
 ### Super-resolution
 * [Dong, C., Loy, C. C., He, K., & Tang, X. (2016). Image Super-Resolution Using Deep Convolutional Networks. IEEE Transactions on Pattern Analysis and Machine Intelligence, 38(2), 295–307](https://doi.org/10.1109/TPAMI.2015.2439281)
