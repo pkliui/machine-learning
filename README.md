@@ -1,7 +1,9 @@
 ## Machine learning projects
 
-### Kaggle
+### Concept for image enhancement based on UNet and PyNET deep neural networks
+[Slides](https://github.com/pkliui/machine-learning/blob/master/image-enhancement/image-enhancement.pdf)
 
+### 
 * **Implementation of Segnet and UNet for image segmentation**
   * [ADDI-PD2 - UNet](https://www.kaggle.com/kliuiev/16-hw-semantic-segmentation-unet)
 
